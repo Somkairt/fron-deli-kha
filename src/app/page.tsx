@@ -1,113 +1,418 @@
-import Image from 'next/image'
-
+import Image from "next/image";
+import { PiPencilLight } from "react-icons/pi";
+import { AiFillCloseCircle } from "react-icons/ai";
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    return (
+        <main className=" h-full flex">
+            <div className="ml-5 w-[1000px] text-black text-3xl flex-col">
+                <p className=" ml-20 mt-10 mb-5 text-[#4f565e]">รายการอาหาร</p>
+                <section className=" w-auto  flex items-center justify-center">
+                    <div className=" ">
+                        <div className="mr-5 ml-5 ">
+                            <button>
+                                <picture className="flex items-center justify-center">
+                                    <img
+                                        src="/cerry.jpg"
+                                        alt=""
+                                        className=" w-40 h-40 object-cover border-4 border-white rounded-md mr-5"
+                                    />
+                                </picture>
+                            </button>
+                        </div>
+                        <div className="flex mt-2">
+                            <p className="mx-auto text-sm text-[#babbbe]">
+                                Spicy Chicken Curry
+                            </p>
+                        </div>
+                    </div>
+                    <div className="mr-5 ml-5 mb-2">
+                        <div className="">
+                            <button>
+                                {" "}
+                                <picture className="flex items-center justify-center">
+                                    <img
+                                        src="/veggy.jpg"
+                                        alt=""
+                                        className=" w-40 h-40 object-cover border-4 border-white rounded-md mr-5"
+                                    />
+                                </picture>
+                            </button>
+                        </div>
+                        <div className="flex mt2">
+                            <p className="mx-auto text-sm text-[#babbbe]">
+                                Vegetable Stir-Fry
+                            </p>
+                        </div>
+                    </div>
+                    <div className="mr-5 ml-5">
+                        <div className="">
+                            <button>
+                                {" "}
+                                <picture className="flex items-center justify-center">
+                                    <img
+                                        src="/monmon.jpg"
+                                        alt=""
+                                        className=" w-40 h-40 object-cover border-4 border-white rounded-md mr-5"
+                                    />
+                                </picture>
+                            </button>
+                        </div>
+                        <div className="flex mt-2">
+                            <p className="mx-auto text-sm text-[#babbbe]">
+                                Grilled Salmon with Butter
+                            </p>
+                        </div>
+                    </div>
+                    <div className="mr-5 ml-5">
+                        <div className="">
+                            <button>
+                                {" "}
+                                <picture className="flex items-center justify-center">
+                                    <img
+                                        src="/pepper.jpg"
+                                        alt=""
+                                        className=" w-40 h-40 object-cover border-4 border-white rounded-md mr-5"
+                                    />
+                                </picture>
+                            </button>
+                        </div>
+                        <div className="flex mt-2">
+                            <p className="mx-auto text-sm text-[#babbbe]">
+                                Pepperoni Pizza
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section className=" w-auto  flex items-center justify-center mt-5">
+                    <div className=" ">
+                        <div className="mr-5 ml-5 ">
+                            <button>
+                                <picture className="flex items-center justify-center">
+                                    <img
+                                        src="/caprese.jpg"
+                                        alt=""
+                                        className=" w-40 h-40 object-cover border-4 border-white rounded-md mr-5"
+                                    />
+                                </picture>
+                            </button>
+                        </div>
+                        <div className="flex mt-2">
+                            <p className="mx-auto text-sm text-[#babbbe]">
+                                Caprese Sandwich
+                            </p>
+                        </div>
+                    </div>
+                    <div className="mr-5 ml-5 mb-2">
+                        <div className="">
+                            <button>
+                                <picture className="flex items-center justify-center">
+                                    <img
+                                        src="/padthai.jpg"
+                                        alt=""
+                                        className=" w-40 h-40 object-cover border-4 border-white rounded-md mr-5"
+                                    />
+                                </picture>
+                            </button>
+                        </div>
+                        <div className="flex mt2">
+                            <p className="mx-auto text-sm text-[#babbbe]">
+                                Shrimp Pad Thai
+                            </p>
+                        </div>
+                    </div>
+                    <div className="mr-5 ml-5">
+                        <div className="">
+                            <button>
+                                <picture className="flex items-center justify-center">
+                                    <img
+                                        src="/flat.jpg"
+                                        alt=""
+                                        className=" w-40 h-40 object-cover border-4 border-white rounded-md mr-5"
+                                    />
+                                </picture>
+                            </button>
+                        </div>
+                        <div className="flex mt-2">
+                            <p className="mx-auto text-sm text-[#babbbe]">
+                                Margherita Flatbread
+                            </p>
+                        </div>
+                    </div>
+                    <div className="mr-5 ml-5">
+                        <div className="">
+                            <button>
+                                {" "}
+                                <picture className="flex items-center justify-center">
+                                    <img
+                                        src="/lasagna.jpg"
+                                        alt=""
+                                        className=" w-40 h-40 object-cover border-4 border-white rounded-md mr-5"
+                                    />
+                                </picture>
+                            </button>
+                        </div>
+                        <div className="flex mt-2">
+                            <p className="mx-auto text-sm text-[#babbbe]">
+                                Roasted Vegetable Lasagna
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section className=" w-auto  flex items-center justify-center mt-5">
+                    <div className=" ">
+                        <div className="mr-5 ml-5 ">
+                            <button>
+                                {" "}
+                                <picture className="flex items-center justify-center">
+                                    <img
+                                        src="/pastack.jpg"
+                                        alt=""
+                                        className=" w-40 h-40 object-cover border-4 border-white rounded-md mr-5"
+                                    />
+                                </picture>
+                            </button>
+                        </div>
+                        <div className="flex mt-2">
+                            <p className="mx-auto text-sm text-[#babbbe]">
+                                Chicken Alfredo Pasta
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        className="mr-5 ml-5 mb-2
+                    "
+                    >
+                        <div className="">
+                            <button>
+                                {" "}
+                                <picture className="flex items-center justify-center">
+                                    <img
+                                        src="/somtam.jpg"
+                                        alt=""
+                                        className=" w-40 h-40 object-cover border-4 border-white rounded-md mr-5"
+                                    />
+                                </picture>
+                            </button>
+                        </div>
+                        <div className="flex mt2">
+                            <p className="mx-auto text-sm text-[#babbbe]">
+                                papaya Salad
+                            </p>
+                        </div>
+                    </div>
+                    <div className="mr-5 ml-5">
+                        <div className="">
+                            <button>
+                                <picture className="flex items-center justify-center">
+                                    <img
+                                        src="/tomyam.jpg"
+                                        alt=""
+                                        className=" w-40 h-40 object-cover border-4 border-white rounded-md mr-5"
+                                    />
+                                </picture>
+                            </button>
+                        </div>
+                        <div className="flex mt-2">
+                            <p className="mx-auto text-sm text-[#babbbe]">
+                                Tom yam kung
+                            </p>
+                        </div>
+                    </div>
+                    <div className="mr-5 ml-5">
+                        <div className="">
+                            <button>
+                                {" "}
+                                <picture className="flex items-center justify-center">
+                                    <img
+                                        src="/massa.jpg"
+                                        alt=""
+                                        className=" w-40 h-40 object-cover border-4 border-white rounded-md mr-5"
+                                    />
+                                </picture>
+                            </button>
+                        </div>
+                        <div className="flex mt-2">
+                            <p className="mx-auto text-sm text-[#babbbe]">
+                                Massaman Majesty
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+            <div className=" mt-5 ml-5 mr-5 ">
+                <div className="  w-[350px] h-[500px] bg-white    border-[5px] border-white rounded-2xl  ">
+                    <div className=" ml-5 h-[420px]">
+                        <p className=" pl-3 text-gray-800 text-2xl mt-5">
+                            รายการสั่งซื้อ
+                        </p>
+                        <div className=" w-fit h-auto mt-3">
+                            <table className="table  w-full h-auto   ">
+                                <th className=" text-sm text-gray-800">
+                                    รายการ
+                                </th>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+                                {/* head */}
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+                                <tbody className=" w-52 text-gray-400 ">
+                                    {/* row 1 */}
+                                    <td>Cy Ganderton</td>
+                                    <td className=" flex   ">Blue</td>
+                                    <td className="text-xl">
+                                        <PiPencilLight />
+                                    </td>
+                                    <td className="text-xl">
+                                        <AiFillCloseCircle />
+                                    </td>
+                                </tbody>
+                                <tbody className=" w-52 text-gray-400 ">
+                                    {/* row 1 */}
+                                    <td>Cy Ganderton</td>
+                                    <td className=" flex   ">Blue</td>
+                                    <td className="text-xl">
+                                        <PiPencilLight />
+                                    </td>
+                                    <td className="text-xl">
+                                        <AiFillCloseCircle />
+                                    </td>
+                                </tbody>
+                                <tbody className=" w-52 text-gray-400 ">
+                                    {/* row 1 */}
+                                    <td>Cy Ganderton</td>
+                                    <td className=" flex   ">Blue</td>
+                                    <td className="text-xl">
+                                        <PiPencilLight />
+                                    </td>
+                                    <td className="text-xl">
+                                        <AiFillCloseCircle />
+                                    </td>
+                                </tbody>
+                                <tbody className=" w-52 text-gray-400 ">
+                                    {/* row 1 */}
+                                    <td>Cy Ganderton</td>
+                                    <td className=" flex   ">Blue</td>
+                                    <td className="text-xl">
+                                        <PiPencilLight />
+                                    </td>
+                                    <td className="text-xl">
+                                        <AiFillCloseCircle />
+                                    </td>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div className=" w-full h-auto mt-3">
+                            <table className="table  w-full h-auto   ">
+                                <thead>
+                                    <th className=" text-sm text-gray-400">
+                                        รายการ
+                                    </th>
+                                </thead>
+                                {/* head */}
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+                                <tbody className=" flex-col text-gray-400 ">
+                                    {/* row 1 */}
+                                    <td>Cy Ganderton</td>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+                                    <td className=" flex ">Blue</td>
+                                    <td className="text-xl">
+                                        <AiFillCloseCircle />
+                                    </td>
+                                </tbody>
+                                <tbody className=" flex-col text-gray-400 ">
+                                    {/* row 1 */}
+                                    <td>Cy Ganderton</td>
+
+                                    <td className=" flex ">Blue</td>
+                                    <td className="text-xl">
+                                        <AiFillCloseCircle />
+                                    </td>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div className=" bottom-0  w-full ml-9 flex   ">
+                        <div className=" text-lg text-gray-800 mr-[150px]">
+                            total
+                        </div>
+                        <div className=" text-lg text-gray-800">10000$</div>
+
+                        {/* head */}
+                    </div>
+                </div>
+                <div>
+                    <button className="btn h-20 w-full bg-[#00bfff] border-[#00bfff] text-white mt-3 mb-2">
+                        Button
+                    </button>
+                </div>
+                <div>
+                    <button className="btn h-20 w-full bg-slate-600 border-slate-600 text-white ">
+                        Button
+                    </button>
+                </div>
+            </div>
+        </main>
+    );
+}
+{
+    /* <Image
+                    src="/kitchen.jpg"
+                    alt="Vercel Logo"
+                    width={1000}
+                    height={24}
+                    priority
+                ></Image> */
+}
+{
+    /* <div className=" bg-gray-500 w-[70px] h-[1000px]">12</div> 
+    
+Quinoa Salad with Lemon Vinaigrette
+
+
+
+
+
+
+
+BBQ Pulled Pork Sliders
+Mediterranean Chickpea Bowl
+
+Avocado and Black Bean Quesadilla
+
+Spinach and Feta Stuffed Chicken Breast
+*/
+}
+{
+    /* <div className=" w-20 flex flex-row mr-5">
+                    <section className="w-full h-auto">
+                        <div className="card h-[200px] w-full">
+                            <div className="border-[4px] border-white">
+                                
+                            </div>
+                            <div className="flex card mt-2 text-xs">
+                                <p className="mx-auto text-[#babbbe]">
+                                    Spicy Chicken Curry
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    <section className="w-full h-auto">
+                        <div className="card h-[200px] w-full">
+                            <div className="border-[4px] border-white">
+                                <picture>
+                                    <img
+                                        src="/pepper.jpg"
+                                        alt=""
+                                        className="w-full h-full object-cover"
+                                    />
+                                </picture>
+                            </div>
+                            <div className="flex card mt-2 text-xs">
+                                <p className="mx-auto text-[#babbbe]">
+                                    Pepperoni Pizza
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                </div> */
 }
