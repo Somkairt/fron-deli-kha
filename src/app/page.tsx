@@ -5,7 +5,10 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import items from "./items";
 import drinks from "./drinks";
 import { useState } from "react";
-
+import DrinkItem from "./DrinkItem";
+import FoodItem from "./FoodItem";
+import SelectedFoodList from "./SelectedFoodList";
+import SelectedDrinkList from "./SelectedDrinkList";
 // สร้าง interface สำหรับรายการอาหาร
 interface Item {
     imageSrc: string;
@@ -69,6 +72,25 @@ export default function Home() {
         (sum, drink) => sum + drink.price,
         0,
     );
+    const alertOrderedFoodItems = () => {
+        const foodItemsMessage = selectedFoodItems
+            .map((item) => item.name)
+            .join(", ");
+        alert(`รายการอาหารที่สั่ง: ${foodItemsMessage}`);
+    };
+    const alertOrderedDrinkItems = () => {
+        const drinkItemsMessage = selectedDrinkItems
+            .map((item) => item.name)
+            .join(", ");
+        alert(`รายการเครื่องดื่มที่สั่ง: ${drinkItemsMessage}`);
+    };
+    const getOrderedFoodItemsMessage = () => {
+        return selectedFoodItems.map((item) => item.name).join(", ");
+    };
+
+    const getOrderedDrinkItemsMessage = () => {
+        return selectedDrinkItems.map((item) => item.name).join(", ");
+    };
 
     return (
         <main className="flex">
@@ -78,54 +100,23 @@ export default function Home() {
                     รายการอาหาร
                 </p>
                 <div className=" h-full overflow-y-scroll">
-                    <section className="w-full flex flex-wrap mx-auto text-center  ">
+                    <section className="w-full flex flex-wrap mx-auto text-center">
                         {items.map((item, index) => (
-                            <div
+                            <FoodItem
                                 key={index}
-                                className="mr-10 ml-5 mb-5"
-                                onClick={() => handleFoodItemClick(item)}
-                            >
-                                <button>
-                                    <picture className="flex items-center justify-center">
-                                        <img
-                                            src={item.imageSrc}
-                                            alt={item.name}
-                                            className="w-40 h-40 object-cover border-4 border-white rounded-md mr-5"
-                                        />
-                                    </picture>
-                                </button>
-
-                                <div className="flex mt-2">
-                                    <p className="mx-auto text-sm text-[#babbbe]">
-                                        {item.name}
-                                    </p>
-                                </div>
-                            </div>
+                                item={item}
+                                handleFoodItemClick={handleFoodItemClick}
+                            />
                         ))}
-                    </section>{" "}
+                    </section>
+
                     <section className="w-full flex flex-wrap mx-auto text-center pb-20">
                         {drinks.map((drink, index) => (
-                            <div
+                            <DrinkItem
                                 key={index}
-                                className="mr-10 ml-5 mb-5"
-                                onClick={() => handleDrinkItemClick(drink)}
-                            >
-                                <button>
-                                    <picture className="flex items-center justify-center">
-                                        <img
-                                            src={drink.imageSrc}
-                                            alt={drink.name}
-                                            className="w-40 h-40 object-cover border-4 border-white rounded-md mr-5"
-                                        />
-                                    </picture>
-                                </button>
-
-                                <div className="flex mt-2">
-                                    <p className="mx-auto text-sm text-[#babbbe]">
-                                        {drink.name}
-                                    </p>
-                                </div>
-                            </div>
+                                drink={drink}
+                                handleDrinkItemClick={handleDrinkItemClick}
+                            />
                         ))}
                     </section>
                 </div>
@@ -143,40 +134,10 @@ export default function Home() {
                         </p>
                         {selectedFoodItems.length > 0 && (
                             <>
-                                <div className="w-full h-[200px] mt-3 overflow-y-scroll">
-                                    <table className="table w-full h-auto">
-                                        <thead></thead>
-                                        <tbody className="w-52 text-gray-400 ">
-                                            {selectedFoodItems.map(
-                                                (selectedItem, index) => (
-                                                    <tr key={index}>
-                                                        <td>
-                                                            {selectedItem.name}
-                                                        </td>
-                                                        <td className="flex items-center">
-                                                            <span className="mr-1">
-                                                                {" "}
-                                                                {
-                                                                    selectedItem.price
-                                                                }
-                                                                $
-                                                            </span>
-                                                            <PiPencilLight className="text-xl ml-1" />
-                                                            <AiFillCloseCircle
-                                                                onClick={() =>
-                                                                    handleRemoveFoodItem(
-                                                                        index,
-                                                                    )
-                                                                }
-                                                                className="text-xl ml-1"
-                                                            />
-                                                        </td>
-                                                    </tr>
-                                                ),
-                                            )}
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <SelectedFoodList
+                                    selectedFoodItems={selectedFoodItems}
+                                    handleRemoveFoodItem={handleRemoveFoodItem}
+                                />
                             </>
                         )}
                     </div>
@@ -188,34 +149,12 @@ export default function Home() {
                         </p>
                     </div>
 
-                    <div className="w-full h-[190px] pl-5  mt-2 overflow-y-scroll">
-                        <table className="table w-full h-auto">
-                            <thead></thead>
-                            <tbody className="w-52 text-gray-400 ">
-                                {selectedDrinkItems.map(
-                                    (selectedItem, index) => (
-                                        <tr key={index}>
-                                            <td>{selectedItem.name}</td>
-                                            <td className="flex items-center">
-                                                <span className="mr-1">
-                                                    {" "}
-                                                    {selectedItem.price}$
-                                                </span>
-                                                <AiFillCloseCircle
-                                                    onClick={() =>
-                                                        handleRemoveDrinkItem(
-                                                            index,
-                                                        )
-                                                    }
-                                                    className="text-xl ml-1"
-                                                />
-                                            </td>
-                                        </tr>
-                                    ),
-                                )}
-                            </tbody>
-                        </table>
-                    </div>
+                    {selectedDrinkItems.length > 0 && (
+                        <SelectedDrinkList
+                            selectedDrinkItems={selectedDrinkItems}
+                            handleRemoveDrinkItem={handleRemoveDrinkItem}
+                        />
+                    )}
 
                     {/* ส่วนแสดงผลรวมราคาทั้งหมดของทั้งอาหารและเครื่องดื่ม */}
                     <div className="  flex ">
@@ -229,10 +168,24 @@ export default function Home() {
                 </div>
 
                 {/* ปุ่ม */}
-                <button className="btn-disabled w-full h-16 bg-[#00bfff] mt-2 rounded-md ">
-                    Button
-                </button>
-                <button className="btn-disabled w-full h-16 bg-gray-800 mt-2 rounded-md ">
+                <div>
+                    <button
+                        onClick={() => {
+                            const foodItemsMessage =
+                                getOrderedFoodItemsMessage();
+                            const drinkItemsMessage =
+                                getOrderedDrinkItemsMessage();
+
+                            alert(
+                                `รายการอาหารที่สั่ง: ${foodItemsMessage}\nรายการเครื่องดื่มที่สั่ง: ${drinkItemsMessage}`,
+                            );
+                        }}
+                        className="btn-secondary text-white w-full h-16 bg-[#00bfff] mt-2 rounded-md"
+                    >
+                        Button 1
+                    </button>
+                </div>
+                <button className="btn-secondary text-white w-full h-16 bg-gray-800 mt-2 rounded-md ">
                     Button
                 </button>
             </div>
